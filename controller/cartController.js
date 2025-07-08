@@ -39,7 +39,8 @@ export const addToCart = (req, res) => {
 
 
 export const updateCart = (req, res) => {
-    const { id, quantity } = req.body;
+    const { quantity } = req.body;
+    const { id } = req.params;
 
     if(data.cart.length === 0){
         return res.status(500).send({ error: "Cart is Empty" });
@@ -55,7 +56,7 @@ export const updateCart = (req, res) => {
   }; 
 
   export const deleteCart = (req, res) => {
-    const { id } = req.body;
+    const { id } = req.params;
 
     if(data.cart.length === 0){
         return res.status(500).send({ error: "Cart is Empty" });

@@ -8,11 +8,8 @@ import {
 
 const router = express.Router();
 
-router
-  .route("/")
-  .get(getCart)
-  .post(addToCart)
-  .put(updateCart)
-  .delete(deleteCart);
+router.route("/").get(getCart).post(addToCart).put(updateCart);
+
+router.route("/:id").delete(deleteCart).put(updateCart);
 
 export default router;
