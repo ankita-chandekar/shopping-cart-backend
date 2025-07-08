@@ -66,6 +66,6 @@ export const updateCart = (req, res) => {
       return res.status(500).send({ error: "Product not found in Cart" });
     }
 
-    data.cart = data.cart.filter((ele) => ele.id !== id);
+    data.cart = data.cart.filter((ele) =>  ele.id != id);
     return res.status(200).send({ message: "Product deleted from the cart", data:product });
   }; 
